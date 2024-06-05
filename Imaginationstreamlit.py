@@ -136,7 +136,7 @@ if resultado == True:
 
     font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(30/400*min(ancho, alto)))
     font_claim = ImageFont.truetype("./Font/"+ marca +" Claim.otf", int(20/400*min(ancho, alto)))
-    font_disclaimer = ImageFont.truetype(".Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
+    font_disclaimer = ImageFont.truetype("./Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
 
 
 
