@@ -97,8 +97,8 @@ if resultado == True:
 
     #Inputfile
     #inputfile = pd.read_excel("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/InputFile.xlsx")
-    inputfilefondos = pd.read_excel("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Background/RGB BACKGROUNDS.xlsx", header=0, index_col=0)
-    inputfileletras = pd.read_excel("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Background/RGB TYPEFACES.xlsx", header=0, index_col=0)
+    inputfilefondos = pd.read_excel("./Background/RGB BACKGROUNDS.xlsx", header=0, index_col=0)
+    inputfileletras = pd.read_excel("./Background/RGB TYPEFACES.xlsx", header=0, index_col=0)
 
     #Marca que se vaa generar
     #marca = inputfile.iloc[0,0]
@@ -134,9 +134,9 @@ if resultado == True:
         transparent_color = (0, 0, 0, 0)
 
 
-    font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(30/400*min(ancho, alto)))
-    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/"+ marca +" Claim.otf", int(20/400*min(ancho, alto)))
-    font_disclaimer = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
+    font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(30/400*min(ancho, alto)))
+    font_claim = ImageFont.truetype("./Font/"+ marca +" Claim.otf", int(20/400*min(ancho, alto)))
+    font_disclaimer = ImageFont.truetype(".Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
 
 
 
@@ -198,7 +198,7 @@ if resultado == True:
 
     #Carpeta Output____________________________________________________________________________________________
 
-    output_folder = 'C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Output'
+    #output_folder = 'C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Output'
 
 
 
@@ -291,7 +291,7 @@ if resultado == True:
         
         if backgroundpic == True:
             img_backg = Image.new("RGBA", (ancho, alto), transparent_color)
-            #im_backg1 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Background/Herbal Essences.png")
+            #im_backg1 = Image.open("./Input/Background/Herbal Essences.png")
             im_backg1= opbackgroundpic
             
             #im_backg2 = im_backg1.resize((int(ancho),int(alto)))
@@ -323,13 +323,13 @@ if resultado == True:
         
         if productos ==1:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador1),int(min(ancho,alto)*0.7*multiplicador1)))
             img_prod10.paste(im_prod12, (int(ancho*0.35-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1))), int(alto*0.27-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1)))))
         
         if productos ==2:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -340,7 +340,7 @@ if resultado == True:
             
 
             #img_prod20 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -352,7 +352,7 @@ if resultado == True:
         if productos ==3:
             
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -363,7 +363,7 @@ if resultado == True:
             
 
             #img_prod20 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -375,7 +375,7 @@ if resultado == True:
 
 
             #img_prod30 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod31 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto3)) +".png")
+            im_prod31 = Image.open("./Productos/"+ str(int(producto3)) +".png")
             im_prod32 = im_prod31.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x3, y3 = find_first_non_transparent_pixel(im_prod32)
             xf3, yf3 = find_last_non_transparent_pixel(im_prod32)
@@ -387,7 +387,7 @@ if resultado == True:
 
         if productos ==4:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -398,7 +398,7 @@ if resultado == True:
             
 
             #img_prod20 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -410,7 +410,7 @@ if resultado == True:
 
 
             #img_prod30 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod31 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto3)) +".png")
+            im_prod31 = Image.open("./Productos/"+ str(int(producto3)) +".png")
             im_prod32 = im_prod31.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x3, y3 = find_first_non_transparent_pixel(im_prod32)
             xf3, yf3 = find_last_non_transparent_pixel(im_prod32)
@@ -421,7 +421,7 @@ if resultado == True:
                                 
                     
             #img_prod40 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod41 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto4)) +".png")
+            im_prod41 = Image.open("./Productos/"+ str(int(producto4)) +".png")
             im_prod42 = im_prod41.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x4, y4 = find_first_non_transparent_pixel(im_prod42)
             xf4, yf4 = find_last_non_transparent_pixel(im_prod42)
@@ -441,7 +441,7 @@ if resultado == True:
          #Agrego el logo
         if oplogo == TRUE:
             img_logo = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_logo1 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Logos/" +opmarca+" "+ optone + ".png")
+            im_logo1 = Image.open("./Logos/" +opmarca+" "+ optone + ".png")
             
             im_logo2 = im_logo1.resize((int(min(ancho, alto)*0.17), int(min(ancho, alto)*0.17)))
             img_logo.paste(im_logo2, (int(ancho*0.8), int(alto*0.05)))
@@ -460,7 +460,7 @@ if resultado == True:
             for k in range(100):
                 titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title)
                 if (titulo_ancho / ancho) >0.95:
-                    font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
+                    font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
                     titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title) 
 
                 else: 
@@ -469,7 +469,7 @@ if resultado == True:
             for k in range(100):
                 titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
                 if (titulo_ancho / ancho) >0.95:
-                    font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
+                    font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
                     titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title) 
 
                 else: 
@@ -496,10 +496,10 @@ if resultado == True:
         for k in range(100):
             claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
             if claim_ancho < 0.8*ancho:
-                font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
+                font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
                 claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
 
-        font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
+        font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
 
         if claim_ancho >= ancho*0.95:
             middle_point = len(claim) // 2
@@ -509,7 +509,7 @@ if resultado == True:
             for k in range(100):
                 claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim)
                 if (claim_ancho / ancho) >0.95:
-                    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
+                    font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
                     claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim) 
 
                 else: 
@@ -518,7 +518,7 @@ if resultado == True:
             for k in range(100):
                 claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
                 if (claim_ancho / ancho) >0.95:
-                    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
+                    font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
                     claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
 
                 else: 
@@ -594,9 +594,9 @@ if resultado == True:
     #Construir imagen tipo cuadrado:
     if tipo == "H":
         
-        font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(50/400*min(ancho, alto)))
-        font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/"+ marca +" Claim.otf", int(37/400*min(ancho, alto)))
-        font_disclaimer = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
+        font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(50/400*min(ancho, alto)))
+        font_claim = ImageFont.truetype("./Font/"+ marca +" Claim.otf", int(37/400*min(ancho, alto)))
+        font_disclaimer = ImageFont.truetype("./Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
         
         titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
 
@@ -646,13 +646,13 @@ if resultado == True:
         
         if productos ==1:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador1),int(min(ancho,alto)*0.7*multiplicador1)))
             img_prod10.paste(im_prod12, (int(ancho*0.6-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1))), int(alto*0.2-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1)))))
         
         if productos ==2:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -662,7 +662,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod12, (coordpegar, int(alto*0.3-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador2)))+find_floor(im_prod12)), crop_im_prod12)
             
 
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -674,7 +674,7 @@ if resultado == True:
         if productos ==3:
             
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -684,7 +684,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod12, (coordpegar, int(alto*0.3-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador3)))+find_floor(im_prod12)), crop_im_prod12)
             
 
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -695,7 +695,7 @@ if resultado == True:
         
 
 
-            im_prod31 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto3)) +".png")
+            im_prod31 = Image.open("./Productos/"+ str(int(producto3)) +".png")
             im_prod32 = im_prod31.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x3, y3 = find_first_non_transparent_pixel(im_prod32)
             xf3, yf3 = find_last_non_transparent_pixel(im_prod32)
@@ -707,7 +707,7 @@ if resultado == True:
 
         if productos ==4:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -717,7 +717,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod12, (coordpegar, int(alto*0.3-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador4)))+find_floor(im_prod12)), crop_im_prod12)
             
 
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -728,7 +728,7 @@ if resultado == True:
         
 
 
-            im_prod31 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto3)) +".png")
+            im_prod31 = Image.open("./Productos/"+ str(int(producto3)) +".png")
             im_prod32 = im_prod31.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x3, y3 = find_first_non_transparent_pixel(im_prod32)
             xf3, yf3 = find_last_non_transparent_pixel(im_prod32)
@@ -738,7 +738,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod32, (coordpegar, int(alto*0.3-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador4)))+find_floor(im_prod32)), crop_im_prod32)
                                 
 
-            im_prod41 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto4)) +".png")
+            im_prod41 = Image.open("./Productos/"+ str(int(producto4)) +".png")
             im_prod42 = im_prod41.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x4, y4 = find_first_non_transparent_pixel(im_prod42)
             xf4, yf4 = find_last_non_transparent_pixel(im_prod42)
@@ -758,7 +758,7 @@ if resultado == True:
          #Agrego el logo
         if oplogo == TRUE:
             img_logo = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_logo1 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Logos/" +opmarca+" "+ optone + ".png")
+            im_logo1 = Image.open("./Logos/" +opmarca+" "+ optone + ".png")
             
             im_logo2 = im_logo1.resize((int(min(ancho, alto)*0.17), int(min(ancho, alto)*0.17)))
             img_logo.paste(im_logo2, (int(ancho*0.85), int(alto*0.05)))
@@ -775,7 +775,7 @@ if resultado == True:
             for k in range(100):
                 titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title)
                 if (titulo_ancho / ancho) >0.95:
-                    font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
+                    font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
                     titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title) 
 
                 else: 
@@ -783,7 +783,7 @@ if resultado == True:
         for k in range(100):
             titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
             if (titulo_ancho / ancho) >0.95:
-                font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
+                font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
                 titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title) 
 
             else: 
@@ -811,10 +811,10 @@ if resultado == True:
         for k in range(100):
             claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
             if claim_ancho < 0.8*ancho:
-                font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
+                font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
                 claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
         
-        font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
+        font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
 
 
         if claim_ancho >= ancho*0.95:
@@ -826,7 +826,7 @@ if resultado == True:
             for k in range(100):
                 claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim)
                 if (claim_ancho / ancho) >0.95:
-                    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
+                    font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
                     claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim) 
 
                 else: 
@@ -835,7 +835,7 @@ if resultado == True:
         for k in range(100):
                 claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
                 if (claim_ancho / ancho) >0.95:
-                    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
+                    font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
                     claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
 
                 else: 
@@ -911,9 +911,9 @@ if resultado == True:
 
     if tipo == "V":
         
-        font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(50/400*min(ancho, alto)))
-        font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/"+ marca +" Claim.otf", int(20/400*min(ancho, alto)))
-        font_disclaimer = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
+        font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(50/400*min(ancho, alto)))
+        font_claim = ImageFont.truetype("./Font/"+ marca +" Claim.otf", int(20/400*min(ancho, alto)))
+        font_disclaimer = ImageFont.truetype("./Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
 
         titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
 
@@ -935,7 +935,7 @@ if resultado == True:
         
         if backgroundpic == True:
             img_backg = Image.new("RGBA", (ancho, alto), transparent_color)
-            #im_backg1 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Background/Herbal Essences.png")
+            #im_backg1 = Image.open("./Background/Herbal Essences.png")
             im_backg1= opbackgroundpic
             
             #im_backg2 = im_backg1.resize((int(ancho),int(alto)))
@@ -963,13 +963,13 @@ if resultado == True:
         
         if productos ==1:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador1),int(min(ancho,alto)*0.7*multiplicador1)))
             img_prod10.paste(im_prod12, (int(ancho*0.1-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1))), int(alto*0.6-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1)))))
         
         if productos ==2:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -979,7 +979,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod12, (coordpegar, int(alto*0.6-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador2)))+find_floor(im_prod12)), crop_im_prod12)
             
 
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -991,7 +991,7 @@ if resultado == True:
         if productos ==3:
             
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -1001,7 +1001,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod12, (coordpegar, int(alto*0.6-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador3)))+find_floor(im_prod12)), crop_im_prod12)
             
 
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -1012,7 +1012,7 @@ if resultado == True:
         
 
 
-            im_prod31 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto3)) +".png")
+            im_prod31 = Image.open("./Productos/"+ str(int(producto3)) +".png")
             im_prod32 = im_prod31.resize((int(min(ancho, alto)*0.7*multiplicador3),int(min(ancho, alto)*0.7*multiplicador3)))
             x3, y3 = find_first_non_transparent_pixel(im_prod32)
             xf3, yf3 = find_last_non_transparent_pixel(im_prod32)
@@ -1024,7 +1024,7 @@ if resultado == True:
 
         if productos ==4:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -1034,7 +1034,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod12, (coordpegar, int(alto*0.6-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador4)))+find_floor(im_prod12)), crop_im_prod12)
             
 
-            im_prod21 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto2)) +".png")
+            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
@@ -1045,7 +1045,7 @@ if resultado == True:
         
 
 
-            im_prod31 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto3)) +".png")
+            im_prod31 = Image.open("./Productos/"+ str(int(producto3)) +".png")
             im_prod32 = im_prod31.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x3, y3 = find_first_non_transparent_pixel(im_prod32)
             xf3, yf3 = find_last_non_transparent_pixel(im_prod32)
@@ -1055,7 +1055,7 @@ if resultado == True:
             img_prod10.paste(crop_im_prod32, (coordpegar, int(alto*0.6-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador4)))+find_floor(im_prod32)), crop_im_prod32)
                                 
 
-            im_prod41 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Productos/"+ str(int(producto4)) +".png")
+            im_prod41 = Image.open("./Productos/"+ str(int(producto4)) +".png")
             im_prod42 = im_prod41.resize((int(min(ancho, alto)*0.7*multiplicador4),int(min(ancho, alto)*0.7*multiplicador4)))
             x4, y4 = find_first_non_transparent_pixel(im_prod42)
             xf4, yf4 = find_last_non_transparent_pixel(im_prod42)
@@ -1075,7 +1075,7 @@ if resultado == True:
          #Agrego el logo
         if oplogo == TRUE:
             img_logo = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_logo1 = Image.open("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Logos/" +opmarca+" "+ optone + ".png")
+            im_logo1 = Image.open("./Logos/" +opmarca+" "+ optone + ".png")
             
             im_logo2 = im_logo1.resize((int(min(ancho, alto)*0.17), int(min(ancho, alto)*0.17)))
             img_logo.paste(im_logo2, (int(ancho*0.77), int(alto*0.03)))
@@ -1092,7 +1092,7 @@ if resultado == True:
             for k in range(100):
                 titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title)
                 if (titulo_ancho / ancho) >0.95:
-                    font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
+                    font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
                     titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title) 
 
                 else: 
@@ -1101,7 +1101,7 @@ if resultado == True:
         for k in range(100):
                 titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
                 if (titulo_ancho / ancho) >0.95:
-                    font_title = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
+                    font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
                     titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title) 
 
                 else: 
@@ -1129,10 +1129,10 @@ if resultado == True:
         for k in range(100):
             claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
             if claim_ancho < 0.8*ancho:
-                font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
+                font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
                 claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
         
-        font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
+        font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
 
 
         if claim_ancho >= ancho*0.95:
@@ -1144,7 +1144,7 @@ if resultado == True:
             for k in range(100):
                 claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim)
                 if (claim_ancho / ancho) >0.95:
-                    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
+                    font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
                     claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim) 
 
                 else: 
@@ -1153,7 +1153,7 @@ if resultado == True:
             for k in range(100):
                 claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
                 if (claim_ancho / ancho) >0.95:
-                    font_claim = ImageFont.truetype("C:/Users/abisambra.d/Procter and Gamble/Emerging Channels Colombia - Documents/E-commerce/Imagination/Imagination 2.0/Input/Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
+                    font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
                     claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
 
                 else: 
