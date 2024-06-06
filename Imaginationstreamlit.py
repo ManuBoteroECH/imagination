@@ -46,7 +46,7 @@ if os.path.exists(file_path):
         im_prod11 = Image.open(file_path)
         st.image(im_prod11, caption="Product Image")
     except Exception as e:
-        st.write(f"An error occurred while opening the image: {e}Image mode: {im_prod11.mode} ")
+        st.write(f"Image mode: {im_prod11.mode} ")
 else:
     st.write(f"File not found: {file_path}")
 #Streamlit________________________________________________________________________________________
