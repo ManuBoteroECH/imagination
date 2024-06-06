@@ -706,7 +706,7 @@ if resultado == True:
         
         if productos ==2:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png")
+            im_prod11 = Image.open("Productos/"+ str(int(producto1)) +".png")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
