@@ -32,6 +32,23 @@ from zipfile import ZipFile
 from io import BytesIO
 import base64
 
+# Manually specify the file path
+file_path = "./Productos/190679000026.png"
+
+# Check if the file exists
+if os.path.exists(file_path):
+    st.write(f"File found: {file_path}")
+    try:
+        # Check file permissions
+        st.write("File permissions:", oct(os.stat(file_path).st_mode)[-3:])
+
+        # Open and display the image
+        im_prod11 = Image.open(file_path)
+        st.image(im_prod11, caption="Product Image")
+    except Exception as e:
+        st.write(f"An error occurred while opening the image: {e}")
+else:
+    st.write(f"File not found: {file_path}")
 #Streamlit________________________________________________________________________________________
 
 #Título Webpage
