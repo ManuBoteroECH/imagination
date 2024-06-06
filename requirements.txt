@@ -1,5 +1,5 @@
 numpy
 pandas
-streamlit
-pillow
+streamlit == 1.13.0
+pillow == 9.2.0
 openpyxl
