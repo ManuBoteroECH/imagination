@@ -149,19 +149,19 @@ if resultado == True:
 
     titulo = optitle
 
-    titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
+    titulo_ancho, titulo_alto = font_title.getsize(titulo)
 
 
     claim = opclaim
-    claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+    claim_ancho, claim_alto = font_claim.getsize(claim)
 
 
     cta = opctatext
-    cta_ancho, cta_alto = draw.textsize(cta, font=font_claim)
+    cta_ancho, cta_alto = font_claim.getsize(cta)
 
 
     disclaimer = opdisc
-    disc_ancho, disc_alto = draw.textsize(disclaimer, font=font_disclaimer)
+    disc_ancho, disc_alto = font_disclaimer.getsize(disclaimer)
 
     #Productos (Hasta 4)
     productos = 4
@@ -458,19 +458,19 @@ if resultado == True:
             titulo = titulo[0:split_point] + "\n" + titulo[split_point+1 : middle_point*2 ]
         
             for k in range(100):
-                titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title)
+                titulo_ancho, titulo_alto = font_title.getsize(titulo[0:split_point])
                 if (titulo_ancho / ancho) >0.95:
                     font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
-                    titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title) 
+                    titulo_ancho, titulo_alto = font_title.getsize(titulo[0:split_point])
 
                 else: 
                     break
         else:
             for k in range(100):
-                titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
+                titulo_ancho, titulo_alto = font_title.getsize(titulo)
                 if (titulo_ancho / ancho) >0.95:
                     font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
-                    titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title) 
+                    titulo_ancho, titulo_alto = font_title.getsize(titulo)
 
                 else: 
                     break
@@ -494,10 +494,10 @@ if resultado == True:
     #Agrego Claim
 
         for k in range(100):
-            claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+            claim_ancho, claim_alto = font_claim.getsize(claim)
             if claim_ancho < 0.8*ancho:
                 font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
-                claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
+                claim_ancho, claim_alto = font_claim.getsize(claim)
 
         font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
 
@@ -507,19 +507,19 @@ if resultado == True:
             claim = claim[0:split_point] + "\n" + claim[split_point+1 : middle_point*2 ]
         
             for k in range(100):
-                claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim)
+                claim_ancho, claim_alto = font_claim.getsize(claim[0:split_point])
                 if (claim_ancho / ancho) >0.95:
                     font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
-                    claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim) 
+                    claim_ancho, claim_alto = font_claim.getsize(claim[0:split_point]) 
 
                 else: 
                     break
         else:
             for k in range(100):
-                claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+                claim_ancho, claim_alto = font_claim.getsize(claim)
                 if (claim_ancho / ancho) >0.95:
                     font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
-                    claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
+                    claim_ancho, claim_alto = font_claim.getsize(claim)
 
                 else: 
                     break
@@ -551,7 +551,7 @@ if resultado == True:
             
             # Calculate the size of the text
             text = cta
-            text_width, text_height = draw.textsize(text, font=font_claim)
+            text_width, text_height = font_claim.getsize(text)
 
             # Calculate the size of the text box based on the text size and padding
             padding = int(ancho*0.02)
@@ -598,7 +598,7 @@ if resultado == True:
         font_claim = ImageFont.truetype("./Font/"+ marca +" Claim.otf", int(37/400*min(ancho, alto)))
         font_disclaimer = ImageFont.truetype("./Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
         
-        titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
+        titulo_ancho, titulo_alto = font_title.getsize(title)
 
         img_back = Image.new("RGBA", (ancho, alto), transparent_color)
         draw = ImageDraw.Draw(img_back)
@@ -773,18 +773,18 @@ if resultado == True:
             titulo = titulo[0:split_point] + "\n" + titulo[split_point+1 : middle_point*2 ]
         
             for k in range(100):
-                titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title)
+                titulo_ancho, titulo_alto = font_title.getsize(title[0:split_point])
                 if (titulo_ancho / ancho) >0.95:
                     font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
-                    titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title) 
+                    titulo_ancho, titulo_alto = font_title.getsize(title[0:split_point])
 
                 else: 
                     break
         for k in range(100):
-            titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
+            titulo_ancho, titulo_alto = font_title.getsize(title)
             if (titulo_ancho / ancho) >0.95:
                 font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
-                titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title) 
+                titulo_ancho, titulo_alto = font_title.getsize(title) 
 
             else: 
                 break
@@ -809,10 +809,10 @@ if resultado == True:
     #Agrego Claim
         
         for k in range(100):
-            claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+            claim_ancho, claim_alto = font_claim.getsize(claim)
             if claim_ancho < 0.8*ancho:
                 font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
-                claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
+                claim_ancho, claim_alto = font_claim.getsize(claim)
         
         font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
 
@@ -824,19 +824,19 @@ if resultado == True:
         
         
             for k in range(100):
-                claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim)
+                claim_ancho, claim_alto = font_claim.getsize(claim[0:split_point])
                 if (claim_ancho / ancho) >0.95:
                     font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
-                    claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim) 
+                    claim_ancho, claim_alto = font_claim.getsize(claim[0:split_point]) 
 
                 else: 
                     break
 
         for k in range(100):
-                claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+                claim_ancho, claim_alto = font_claim.getsize(claim)
                 if (claim_ancho / ancho) >0.95:
                     font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
-                    claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
+                    claim_ancho, claim_alto = font_claim.getsize(claim)
 
                 else: 
                     break
@@ -870,7 +870,7 @@ if resultado == True:
             
             # Calculate the size of the text
             text = cta
-            text_width, text_height = draw.textsize(text, font=font_claim)
+            text_width, text_height = font_claim.getsize(text)
 
             # Calculate the size of the text box based on the text size and padding
             padding = int(ancho*0.02)
@@ -915,7 +915,7 @@ if resultado == True:
         font_claim = ImageFont.truetype("./Font/"+ marca +" Claim.otf", int(20/400*min(ancho, alto)))
         font_disclaimer = ImageFont.truetype("./Font/"+ marca +" Disclaimer.otf", int(10/400*min(ancho, alto)))
 
-        titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
+        titulo_ancho, titulo_alto = font_title.getsize(titulo)
 
         img_back = Image.new("RGBA", (ancho, alto), transparent_color)
         draw = ImageDraw.Draw(img_back)
@@ -1090,19 +1090,19 @@ if resultado == True:
             titulo = titulo[0:split_point] + "\n" + titulo[split_point+1 : middle_point*2 ]
         
             for k in range(100):
-                titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title)
+                titulo_ancho, titulo_alto = font_title.getsize(titulo[0:split_point])
                 if (titulo_ancho / ancho) >0.95:
                     font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
-                    titulo_ancho, titulo_alto = draw.textsize(titulo[0:split_point], font=font_title) 
+                    titulo_ancho, titulo_alto = font_title.getsize(titulo[0:split_point])
 
                 else: 
                     break
         
         for k in range(100):
-                titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title)
+                titulo_ancho, titulo_alto = font_title.getsize(titulo)
                 if (titulo_ancho / ancho) >0.95:
                     font_title = ImageFont.truetype("./Font/" + marca +" Tittle.otf", int(font_title.size*0.9))
-                    titulo_ancho, titulo_alto = draw.textsize(titulo, font=font_title) 
+                    titulo_ancho, titulo_alto = font_title.getsize(titulo) 
 
                 else: 
                     break
@@ -1127,10 +1127,10 @@ if resultado == True:
     #Agrego Claim
 
         for k in range(100):
-            claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+            claim_ancho, claim_alto = font_claim.getsize(claim)
             if claim_ancho < 0.8*ancho:
                 font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*1.2))
-                claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
+                claim_ancho, claim_alto = font_claim.getsize(claim) 
         
         font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", min( int(font_claim.size), int(font_title.size*0.8)))
 
@@ -1142,19 +1142,19 @@ if resultado == True:
         
         
             for k in range(100):
-                claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim)
+                claim_ancho, claim_alto = font_claim.getsize(claim[0:split_point])
                 if (claim_ancho / ancho) >0.95:
                     font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
-                    claim_ancho, claim_alto = draw.textsize(claim[0:split_point], font=font_claim) 
+                    claim_ancho, claim_alto = font_claim.getsize(claim[0:split_point])
 
                 else: 
                     break
 
             for k in range(100):
-                claim_ancho, claim_alto = draw.textsize(claim, font=font_claim)
+                claim_ancho, claim_alto = font_claim.getsize(claim)
                 if (claim_ancho / ancho) >0.95:
                     font_claim = ImageFont.truetype("./Font/" + marca +" Claim.otf", int(font_claim.size*0.9))
-                    claim_ancho, claim_alto = draw.textsize(claim, font=font_claim) 
+                    claim_ancho, claim_alto = font_claim.getsize(claim)
 
                 else: 
                     break
@@ -1186,7 +1186,7 @@ if resultado == True:
             
             # Calculate the size of the text
             text = cta
-            text_width, text_height = draw.textsize(text, font=font_claim)
+            text_width, text_height = font_claim.getsize(text)
 
             # Calculate the size of the text box based on the text size and padding
             padding = int(ancho*0.02)
