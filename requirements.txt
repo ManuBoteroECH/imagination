@@ -3,4 +3,3 @@ pandas
 streamlit
 pillow
 openpyxl
-libfreetype6-dev
