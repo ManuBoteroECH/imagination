@@ -14,6 +14,7 @@ import sys
 import pandas as pd
 
 from tkinter import *
+import PIL
 from PIL import Image,ImageTk, ImageDraw, ImageFont
 from PIL import ImageDraw, ImageFont
 import tkinter as tk
@@ -33,6 +34,11 @@ from io import BytesIO
 import base64
 
 
+# Display environment information
+st.write(f"Python version: {sys.version}")
+st.write(f"Pillow version: {PIL.__version__}")
+st.write(f"Streamlit version: {st.__version__}")
+
 # Define the file path
 file_path = "./Productos/190679000026.png"
 
@@ -45,6 +51,10 @@ if os.path.exists(file_path):
 
         # Open and display the image
         try:
+            with open(file_path, 'rb') as file:
+                file_content = file.read(100)
+                st.write(f"First 100 bytes of the file: {file_content}")
+
             im_prod11 = Image.open(file_path)
             st.write(f"Image format: {im_prod11.format}")
             st.write(f"Image size: {im_prod11.size}")
@@ -58,8 +68,6 @@ if os.path.exists(file_path):
             st.write(f"Image mode after conversion: {im_prod11.mode}")
         except Exception as open_err:
             st.write(f"An error occurred while opening the image: {open_err}")
-            with open(file_path, 'rb') as file:
-                st.write(f"First 100 bytes of the file: {file.read(100)}")
     except Exception as stat_err:
         st.write(f"An error occurred while accessing file properties: {stat_err}")
 else:
