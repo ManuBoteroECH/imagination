@@ -43,7 +43,7 @@ if os.path.exists(file_path):
         st.write("File permissions:", oct(os.stat(file_path).st_mode)[-3:])
 
         # Open and display the image
-        im_prod11 = Image.open(file_path)
+        im_prod11 = Image.open(file_path).convert("RGBA")
         st.image(im_prod11, caption="Product Image")
     except Exception as e:
         st.write(f"An error occurred while opening the image: {e}")
