@@ -44,11 +44,12 @@ if os.path.exists(file_path):
 
         # Open and display the image
         im_prod11 = Image.open(file_path)
+        st.write(f"Image mode: {im_prod11.mode}")
         st.image(im_prod11, caption="Product Image")
         
     except Exception as e:
         st.write(f"exception: {e} ")
-        st.write(f"Image mode: {im_prod11.mode}")
+        
 else:
     st.write(f"File not found: {file_path}")
 #Streamlit________________________________________________________________________________________
