@@ -34,44 +34,6 @@ from io import BytesIO
 import base64
 
 
-# Display environment information
-st.write(f"Python version: {sys.version}")
-st.write(f"Pillow version: {PIL.__version__}")
-st.write(f"Streamlit version: {st.__version__}")
-
-# Define the file path
-file_path = "./Productos/190679000026.png"
-
-# Check if the file exists
-if os.path.exists(file_path):
-    st.write(f"File found: {file_path}")
-    try:
-        # Check file permissions
-        st.write("File permissions:", oct(os.stat(file_path).st_mode)[-3:])
-
-        # Open and display the image
-        try:
-            with open(file_path, 'rb') as file:
-                file_content = file.read(100)
-                st.write(f"First 100 bytes of the file: {file_content}")
-
-            im_prod11 = Image.open(file_path)
-            st.write(f"Image format: {im_prod11.format}")
-            st.write(f"Image size: {im_prod11.size}")
-            st.write(f"Image mode: {im_prod11.mode}")
-
-            # Display the image
-            st.image(im_prod11, caption="Product Image")
-
-            # Convert to RGBA if needed
-            im_prod11 = im_prod11.convert("RGBA")
-            st.write(f"Image mode after conversion: {im_prod11.mode}")
-        except Exception as open_err:
-            st.write(f"An error occurred while opening the image: {open_err}")
-    except Exception as stat_err:
-        st.write(f"An error occurred while accessing file properties: {stat_err}")
-else:
-    st.write(f"File not found: {file_path}")
 
 #Streamlit________________________________________________________________________________________
 
@@ -375,13 +337,13 @@ if resultado == True:
         
         if productos ==1:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png").convert("RGBA")
+            im_prod11 = Image.open("./Productos/"+ str(int(float(producto1))) +".png").convert("RGBA")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador1),int(min(ancho,alto)*0.7*multiplicador1)))
             img_prod10.paste(im_prod12, (int(ancho*0.35-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1))), int(alto*0.27-max(0,locatorscale*int(min(ancho, alto)*0.7*multiplicador1)))))
         
         if productos ==2:
             img_prod10 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod11 = Image.open("./Productos/"+ str(int(producto1)) +".png").convert("RGBA")
+            im_prod11 = Image.open("./Productos/"+ str(int(float(producto1))) +".png").convert("RGBA")
             im_prod12 = im_prod11.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x1, y1 = find_first_non_transparent_pixel(im_prod12)
             xf1, yf1 = find_last_non_transparent_pixel(im_prod12)
@@ -392,7 +354,7 @@ if resultado == True:
             
 
             #img_prod20 = Image.new("RGBA", (ancho, alto), transparent_color)
-            im_prod21 = Image.open("./Productos/"+ str(int(producto2)) +".png").convert("RGBA")
+            im_prod21 = Image.open("./Productos/"+ str(int(float(producto2))) +".png").convert("RGBA")
             im_prod22 = im_prod21.resize((int(min(ancho, alto)*0.7*multiplicador2),int(min(ancho, alto)*0.7*multiplicador2)))
             x2, y2 = find_first_non_transparent_pixel(im_prod22)
             xf2, yf2 = find_last_non_transparent_pixel(im_prod22)
